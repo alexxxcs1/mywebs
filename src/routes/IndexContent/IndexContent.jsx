@@ -29,7 +29,21 @@ export class IndexContent extends Component {
         <ProgressBanner loaded={this.state.pageonload} color='random'/>
         <TopNav />
 
-        <div className={style.SlideBox}>
+        <div className={style.ContentBox}>
+          
+          <div className={style.TextBox}>
+            <span>
+              WE
+            </span>
+            <br/> 
+            <span>
+              ARE
+            </span>
+          </div>
+
+        </div>
+
+        <div className={style.ContentBox}>
           <div></div>
           <div></div>
           <div></div>
@@ -37,8 +51,7 @@ export class IndexContent extends Component {
           <div></div>
         </div>
 
-        <div className={style.SlideBox}>
-        </div>
+        
 
       </div>
     )

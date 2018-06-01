@@ -87,6 +87,7 @@ body {
     height: 100%;
     background: #fff;
     color: #333333 !important;
+    &::-webkit-scrollbar{width: 0;}
     &.modal-open {
         position: fixed;
         width: 100%;

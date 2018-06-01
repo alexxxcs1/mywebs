@@ -22,7 +22,7 @@ export class TopNav extends Component {
     window.addEventListener('scroll',()=>
     {
       ScrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
-      if (ScrollTop == 0) {
+      if (ScrollTop < 300) {
         self.setState({
           actNav:true,
         })
