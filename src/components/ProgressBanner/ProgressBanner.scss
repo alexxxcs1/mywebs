@@ -4,12 +4,14 @@
     width: 0;
     height: 10px;
     background-color: var(--procolor);
+    box-shadow: var(--procolor) 0 0 30px;
 
     position: fixed;
     top: 0px;
     left: 0px;
 
     transition: width 0.3s;
+    z-index: 999;
 }
 .hide
 {
@@ -27,3 +29,4 @@
         transform: translate3d(0, -100%, 0);
     }
 }
+

@@ -13,12 +13,9 @@ export class Home extends Component {
   }
   componentDidMount()
   {
-    setTimeout(() => {
       this.setState({
         pageonload:true,
-      })
-    }, 3000);
-    
+      }) 
     window.addEventListener('scroll',()=>
     {
       var ScrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
@@ -29,10 +26,8 @@ export class Home extends Component {
   render() {
     return (
       <div className={style.Box}>
-        <ProgressBanner loaded={this.state.pageonload} color='#fff'/>
+        <ProgressBanner loaded={this.state.pageonload} color='#333'/>
         <HellworldBox />
-        <div className={style.homeContent}></div>
-        
       </div>
     )
   }

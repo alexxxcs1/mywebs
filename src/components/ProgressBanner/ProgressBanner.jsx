@@ -14,17 +14,27 @@ export class ProgressBanner extends Component {
   }
   componentWillReceiveProps(nextprop)
   {
+    
     this.setState({
         loaded:nextprop.loaded,
     });
-    this.refs.proitem.style.backgroundColor = nextprop.color
+    if (nextprop.color == 'random') {
+        this.refs.proitem.style.backgroundColor = '#'+(parseInt(Math.random()*255).toString(16))+(parseInt(Math.random()*255).toString(16))+(parseInt(Math.random()*255).toString(16));
+    }else{
+        this.refs.proitem.style.backgroundColor = nextprop.color
+    }
+    
   }
   componentDidMount()
   {
     this.setState({
         loaded:this.props.loaded,
     });
-    this.refs.proitem.style.backgroundColor = this.props.color
+    if (this.props.color == 'random') {
+        this.refs.proitem.style.backgroundColor = '#'+(parseInt(Math.random()*255).toString(16))+(parseInt(Math.random()*255).toString(16))+(parseInt(Math.random()*255).toString(16));
+    }else{
+        this.refs.proitem.style.backgroundColor = this.props.color
+    }
     
     
     this.state.intervalReflash = setInterval(()=>
@@ -38,6 +48,7 @@ export class ProgressBanner extends Component {
                     animatover:true,
                 })
             }, 500);
+        
             clearInterval(this.state.intervalReflash);
         }else
         {

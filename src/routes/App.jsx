@@ -14,6 +14,7 @@ import store from '../redux/store';
 import NotFound from './notFound'
 
 import Home from './Home'
+import IndexContent from './IndexContent'
 
 //component
 import AnimateBackground from '../components/AnimateBackground'
@@ -67,13 +68,14 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div style={{height:'100%'}}>
         <Router history={hashHistory}>
           {/* 首页 */}
           <Route path='/' component={Home} > 
             {/* <Route path="/login" component={Login}/> */}
           </Route>
           {/* 404页面 */}
+          <Route path="/issacworld" component={IndexContent}/> 
           <Route path="*" component={NotFound}/> 
 
         </Router>

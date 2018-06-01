@@ -13,6 +13,7 @@
     transform: translateX(-50%) translateY(-50%);
 
     color: #FFF;
+    font-weight: bold;
 
     display: flex;
     display: -webkit-flex;
@@ -30,7 +31,7 @@
         font-size: 100px;
         &:hover
         {
-            
+            cursor: pointer;
             text-shadow:#fff 0 0 50px;
         }
     }
@@ -72,6 +73,12 @@
         --n:9
     }
 }
+
+.actshake
+{
+    animation: shake 0.5s;
+}
+
 @-webkit-keyframes slideInUp {
     0% {
         opacity: 0;
@@ -135,6 +142,53 @@
  
     }
 }
+
+@-webkit-keyframes shake {
+    0%,
+    to {
+        -webkit-transform:translateX(-50%) translateY(-50%) translateZ(0);
+        transform:translateX(-50%) translateY(-50%) translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform:translateX(-50%) translateY(-50%) translate3d(-10px, 0, 0);
+        transform:translateX(-50%) translateY(-50%) translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform:translateX(-50%) translateY(-50%) translate3d(10px, 0, 0);
+        transform:translateX(-50%) translateY(-50%) translate3d(10px, 0, 0)
+    }
+}
+
+@keyframes shake {
+    0%,
+    to {
+        -webkit-transform:translateX(-50%) translateY(-50%) translateZ(0);
+        transform:translateX(-50%) translateY(-50%) translateZ(0)
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform:translateX(-50%) translateY(-50%) translate3d(-10px, 0, 0);
+        transform:translateX(-50%) translateY(-50%) translate3d(-10px, 0, 0)
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform:translateX(-50%) translateY(-50%) translate3d(10px, 0, 0);
+        transform:translateX(-50%) translateY(-50%) translate3d(10px, 0, 0)
+    }
+}
+
 
 @media only screen and (max-width: 800px) {
     .HomeBox {
