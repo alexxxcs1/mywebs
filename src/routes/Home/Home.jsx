@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import style from './Home.scss'
 
 import ProgressBanner from '../../components/ProgressBanner'
+import HellworldBox from '../../components/HellworldBox'
 
 export class Home extends Component {
   constructor(props) {
@@ -12,33 +13,26 @@ export class Home extends Component {
   }
   componentDidMount()
   {
-    this.refs.homebox.style.setProperty('--randomtime', (Math.random()+0.1) +'s');
-    
     setTimeout(() => {
       this.setState({
         pageonload:true,
       })
     }, 3000);
     
+    window.addEventListener('scroll',()=>
+    {
+      var ScrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+      
+    });
     
   }
   render() {
     return (
-      <div>
-        <ProgressBanner loaded={this.state.pageonload} />
+      <div className={style.Box}>
+        <ProgressBanner loaded={this.state.pageonload} color='#fff'/>
+        <HellworldBox />
+        <div className={style.homeContent}></div>
         
-        <div className={style.HomeBox} ref='homebox'>
-            <span>H</span>
-            <span>E</span>
-            <span>L</span>
-            <span>L</span>
-            <span>W</span>
-            <span>O</span>
-            <span>R</span>
-            <span>L</span>
-            <span>D</span>
-        </div>
-
       </div>
     )
   }

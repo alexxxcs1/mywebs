@@ -16,13 +16,15 @@ export class ProgressBanner extends Component {
   {
     this.setState({
         loaded:nextprop.loaded,
-    })
+    });
+    this.refs.proitem.style.backgroundColor = nextprop.color
   }
   componentDidMount()
   {
     this.setState({
         loaded:this.props.loaded,
-    })
+    });
+    this.refs.proitem.style.backgroundColor = this.props.color
     
     
     this.state.intervalReflash = setInterval(()=>
@@ -57,7 +59,9 @@ export class ProgressBanner extends Component {
   }
   render() {
     return (
-      <div className={this.state.animatover?style.ProgressBannerBox+' '+style.hide:style.ProgressBannerBox} style={{width:this.state.prog+'%'}}>
+      <div className={this.state.animatover?style.ProgressBannerBox+' '+style.hide:style.ProgressBannerBox} 
+      style={{width:this.state.prog+'%'}}
+      ref='proitem'>
         
       </div>
     )
