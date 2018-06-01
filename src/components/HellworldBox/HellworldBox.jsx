@@ -24,7 +24,7 @@ export class HellworldBox extends Component {
       tmppw.push(key)
       if (tmppw.length==this.state.pw.length) {
         if (tmppw.join('')==this.state.pw) {
-            hashHistory.push('/isaacworld'); 
+            hashHistory.push('/issacworld'); 
         }else
         {
             this.setState({
