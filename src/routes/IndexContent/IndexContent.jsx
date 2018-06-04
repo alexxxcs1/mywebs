@@ -33,11 +33,11 @@ export class IndexContent extends Component {
           
           <div className={style.TextBox}>
             <span>
-              WE
+              City
             </span>
             <br/> 
             <span>
-              ARE
+              Ninja
             </span>
           </div>
 
