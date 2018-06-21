@@ -200,7 +200,7 @@ config.module.rules.push({
   loader: 'url-loader',
   options: {
     limit: 8192,
-    name: 'images/[name]-[hash].[ext]',
+    name: 'public/images/[name]-[hash].[ext]',
   },
 })
 
