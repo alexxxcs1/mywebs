@@ -38,6 +38,9 @@ const config = {
       'jsnext:main',
       'main',
     ],
+    alias: {
+      pages: path.join(__dirname, 'src/style'),
+    }
   },
   externals: project.externals,
   module: {

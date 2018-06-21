@@ -4,6 +4,7 @@ import { hashHistory, Router, Route, IndexRoute } from 'react-router'
 
 import ProgressBanner from '../../components/ProgressBanner'
 import TopNav from '../../components/TopNav'
+import Css3d from '../../components/Css3d';
 
 export class IndexContent extends Component {
   constructor(props)
@@ -31,14 +32,8 @@ export class IndexContent extends Component {
 
         <div className={style.ContentBox}>
           
-          <div className={style.TextBox}>
-            <span>
-              City
-            </span>
-            <br/> 
-            <span>
-              Ninja
-            </span>
+          <div className={style.showBox}>
+            <Css3d />
           </div>
 
         </div>
