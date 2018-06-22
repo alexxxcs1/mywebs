@@ -21,8 +21,16 @@
     transform-style: preserve-3d;
     
     // overflow: hidden;
-    animation: rotate 5s infinite linear;
+    
     transform-origin: 50% 50% 0px;
+}
+.rotateLeft
+{
+    animation: rotateleft 5s infinite linear;
+}
+.rotateRight
+{
+    animation: rotateright 5s infinite linear;
 }
 .item
 {
@@ -36,12 +44,15 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-@-webkit-keyframes rotate
+@-webkit-keyframes rotateleft
 {
-    0%{
-        transform: rotateY(0deg);
-    }
-    100%{
+    to{
         transform: rotateY(360deg);
+    }
+}
+@-webkit-keyframes rotateright
+{
+    to{
+        transform: rotateY(-360deg);
     }
 }
