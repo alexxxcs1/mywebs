@@ -22,15 +22,16 @@ export class Css3d extends Component {
   {
     var deg = 360 / 20;
     
-    
-    var R = parseInt((93 / 2) / Math.tan((deg/ 2 )* Math.PI / 180) - 1) // tan@ = 对边(R) / 临边(W/2)
+    var width = 93;
+    var R = parseInt((width / 2) / Math.tan((deg/ 2 )* Math.PI / 180) - 1) // tan@ = 对边(R) / 临边(W/2)
     console.log(R);
+    var width2rem = parseFloat(width) / window.rem;
     var cont = this;
     var startDeg = 180;
     var itemNodes = images.map(function(itemBase,index) {   
       startDeg -= deg;
       return (
-        <div className={style.item} style={{backgroundImage:'url('+itemBase+')',transform:'translateX(-50%) rotateY('+startDeg+'deg) translateZ('+(-R)+'px)',}}/>
+        <div className={style.item} style={{width:width2rem+'rem',backgroundImage:'url('+itemBase+')',transform:'translateX(-50%) rotateY('+startDeg+'deg) translateZ('+(-R)+'px)',}}/>
       ); 
     });
     return itemNodes;
