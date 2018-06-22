@@ -57,7 +57,7 @@ export class Css3d extends Component {
       })
     }
   }
-  c_MouseLeave(e)
+  c_MouseOut(e)
   { 
     clearInterval(this.state.interval);
     this.setState({
@@ -74,13 +74,19 @@ export class Css3d extends Component {
     var cont = this;
     var startDeg = 180;
     var self = this;
+    
     var itemNodes = images.map(function(itemBase,index) {   
+      var transformStyle = {
+        width:width2rem+'rem',
+        backgroundImage:'url('+itemBase+')',
+        transform:'translateX(-50%) rotateY('+startDeg+'deg) translateZ('+(-R)+'px)',
+      }
       startDeg -= deg;
       return (
         <div
         key={'item'+Math.random()*1024} 
         className={style.item} onClick={self.setPassword.bind(self,index)} 
-         style={{width:width2rem+'rem',backgroundImage:'url('+itemBase+')',transform:'translateX(-50%) rotateY('+startDeg+'deg) translateZ('+(-R)+'px)',}}/>
+        style={transformStyle} />
       ); 
     });
     return itemNodes;
@@ -90,7 +96,8 @@ export class Css3d extends Component {
         <div className={style.hiddenbox} 
         onMouseOver={this.c_MouseOver.bind(this)}
         onMouseEnter={this.c_MouseEnter.bind(this)}
-        onMouseLeave={this.c_MouseLeave.bind(this)}>
+        onMouseOut={this.c_MouseOut.bind(this)}
+        ref='view'>
             <div className={style.outbox}>
                 <div className={style.Box} style={{transform:'rotateY('+this.state.rotateY+'deg)'}}>
                     {this.createBkgItem()}

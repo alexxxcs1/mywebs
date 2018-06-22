@@ -24,14 +24,6 @@
     
     transform-origin: 50% 50% 0px;
 }
-.rotateLeft
-{
-    animation: rotateleft 5s infinite linear;
-}
-.rotateRight
-{
-    animation: rotateright 5s infinite linear;
-}
 .item
 {
     height: 300px;
@@ -43,16 +35,4 @@
     backface-visibility: hidden;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-}
-@-webkit-keyframes rotateleft
-{
-    to{
-        transform: rotateY(360deg);
-    }
-}
-@-webkit-keyframes rotateright
-{
-    to{
-        transform: rotateY(-360deg);
-    }
 }
